@@ -30,7 +30,7 @@ def populate(N=5):
 
         rgtr = Registrations.objects.get_or_create(name=i_name, course=fake_course)[0]
 
-        onbrd = Onboarded.objects.get_or_create(name = rgtr, time=fake_time)[0]
+        onnbrd = Onboarded.objects.get_or_create(name = rgtr, time=fake_time)[0]
 
 if __name__ == "__main__":
     print("populating scripts")
