@@ -1,17 +1,17 @@
 from django.db import models
 
 class Freedemo(models.Model):
-    name = models.CharField(max_length=100,)
-    phone = models.IntegerField(unique=True)
+    name = models.CharField(max_length=100)
+    phone = models.CharField(max_length=15)
     email = models.EmailField(unique=True)
-    occupation = models.CharField(max_length=100)
+    address = models.CharField(max_length=100)
 
     def __str__(self):
         return self.name
 
 class Registrations(models.Model):
-    name = models.CharField(Freedemo, on_delete=models.CASCADE)
-    course = models.CharField(max_length=100)
+    name = models.ForeignKey(Freedemo, on_delete=models.CASCADE)
+    job = models.CharField(max_length=100)
 
     def __str__(self):
         return self.course
