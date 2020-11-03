@@ -16,11 +16,11 @@ def populate(N=5):
         fake_name = fakegen.name()
         fake_phone = fakegen.phone_number()
         fake_email = fakegen.email()
-        fake_address = fakegen.address()
+        fake_ssn= fakegen.ssn()
         fake_job = fakegen.job()
         fake_time = fakegen.time()
 
-        var1 = Freedemo.objects.get_or_create(name=fake_name, phone = fake_phone, email = fake_email, address = fake_address)[0]
+        var1 = Freedemo.objects.get_or_create(name=fake_name, phone = fake_phone, email = fake_email, ssn = fake_ssn)[0]
 
         var2 = Registrations.objects.get_or_create(name=var1, job=fake_job)[0]
 
