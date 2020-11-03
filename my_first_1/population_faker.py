@@ -9,7 +9,7 @@ from my_first_1.models import Freedemo, Onboarded, Registrations
 from faker import Faker
 
 fakegen = Faker()
-Details = ['name','phone number', 'email']
+Details = ['name','phone number','email']
 
 def add_details():
     A = Freedemo.objects.get_or_create(name=random.choice(Details))[0]
