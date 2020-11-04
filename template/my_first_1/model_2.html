@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+{% load static %}
+<html>
+
+<head>
+    <meta charset='utf-8'>
+    <meta http-equiv='X-UA-Compatible' content='IE=edge'>
+    <title>Page Title</title>
+    <meta name='viewport' content='width=device-width, initial-scale=1'>
+    <title>Level up</title>
+</head>
+<body>
+    <h1>This is one level up</h1>
+    {% if free_demo %}
+    <table>
+        <thead>
+            <th>name</th>
+            <th>Phone</th>
+            <th>email</th>
+            <th>ssn</th>
+        </thead>
+        {% for i in free_demo %}
+
+        <tr>
+            <td>{{ i.name }}</td>
+            <td>{{ i.phone }}</td>
+            <td>{{ i.email }}</td>
+            <td>{{ i.ssn }}</td>
+        </tr>
+        {% endfor %}
+    </table>
+    {% else %}
+    <p>no data found</p>
+    {% endif %}
+    <style>
+        table, th, td{
+            border: 2px solid black;
+        th, td{
+            padding: 3px;
+        }
+        }
+    </style>
+</body>
+</html>

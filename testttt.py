@@ -4,7 +4,6 @@ os.environ.setdefault('DJANGO_SETTINGS_MODULE','nyfirst.settings')
 import django
 django.setup()
 
-import random
 from my_first_1.models import Freedemo, Onboarded, Registrations
 from faker import Faker
 
@@ -18,13 +17,15 @@ def populate(N=5):
         fake_email = fakegen.email()
         fake_ssn= fakegen.ssn()
         fake_job = fakegen.job()
-        fake_time = fakegen.time()
+        fake_time = fakegen.date_time()
 
         var1 = Freedemo.objects.get_or_create(name=fake_name, phone = fake_phone, email = fake_email, ssn = fake_ssn)[0]
 
-        var2 = Registrations.objects.get_or_create(name=var1, job=fake_job)[0]
+        var2 = Registrations.objects.get_or_create(name=fake_name, job=fake_job)[0]
 
-        var3 = Onboarded.objects.get_or_create(name = var2, time=fake_time)[0]
+        var3 = Onboarded.objects.get_or_create(name = fake_name, time=fake_time)[0]
+
+        num = num+1
 
 if __name__ == "__main__":
     print("populating scripts")
