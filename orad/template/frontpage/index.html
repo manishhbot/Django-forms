@@ -11,5 +11,11 @@
 
 <h1>Please go to /user to fill up the form</h1>
 
+{% for i in forms %}
+<li>{{ i.Name }}</li>
+<li>{{ i.Email }}</li>
+
+{% endfor %}
+
 </body>
 </html>
