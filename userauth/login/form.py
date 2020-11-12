@@ -1,21 +1,24 @@
 from django import forms
 from django.forms import ModelForm
-from pip._vendor.urllib3 import fields
 from django.contrib.auth.models import User
-from .models import Details, Auth
+from .models import Details, Django_user
 
 
-class Newfile(ModelForm):
-    class Meta:
-        model = Details
-        fields = '__all__'
-class Usern(ModelForm):
+class Admin(ModelForm):
     password = forms.CharField(widget=forms.PasswordInput())
+
     class Meta:
         model = User
         fields = ('username', 'email', 'password')
 
-class Authh(ModelForm):
+
+class Detailss(ModelForm):
     class Meta:
-        model = Auth
+        model = Details
         fields = '__all__'
+
+
+class Djangouserr(ModelForm):
+    class Meta:
+        model = Django_user
+        fields = ('picture',)
