@@ -1,6 +1,12 @@
 from django.shortcuts import render
 from .form import Admin, Detailss, Djangouserr
 
+#imports related to login and logout
+from django.core.urlresolvers import reverse
+from django.contrib.auth.decorators import login_required
+from django.http import HttpResponse, HttpResponseRedirect
+from django.contrib.auth import authenticate, login, logout
+
 
 # Create your views here.
 
