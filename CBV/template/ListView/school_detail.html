@@ -9,8 +9,9 @@
         <li>{{ school_detail.Board }}</li>
         <li>{{ school_detail.Location }}</li>
     </ol>
-    <h3>Students Detsils</h3>
+    <h3>Students Details</h3>
     {% for i in school_detail.students.all %}
-    <p>{{ Student.Name }} is studying in {{ Student.Board }} board</p>
-
+    <p>{{ i.Name }} is studying in {{ i.Class }} board</p>
+    {% endfor %}
 </div>
+{% endblock %}
