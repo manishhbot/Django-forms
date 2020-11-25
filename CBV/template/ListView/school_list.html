@@ -1,0 +1,8 @@
+{% extends "ListView/base.html" %}
+
+{% block something %}
+<h1>Welcome to the list of schools</h1>
+{% for i in school_list %}
+<h2><li><a href="{{ i.id }}">{{ i.Name }}</a></li></h2>
+{% endfor %}
+{% endblock %}
