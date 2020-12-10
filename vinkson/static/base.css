@@ -1,0 +1,12 @@
+.logo-image {
+    width: 5%;
+    height: 96px;
+    position: fixed;
+    top: 10px;
+    left: 10px;
+    z-index: 1000;
+}
+
+.navbar-nav {
+    margin-left: auto;
+}
